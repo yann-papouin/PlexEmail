@@ -20,7 +20,7 @@ from collections import OrderedDict
 from datetime import date, timedelta
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from email.MIMEImage import MIMEImage
+from email.mime.image import MIMEImage
 from email.header import Header
 from email.utils import formataddr
 from xml.etree.ElementTree import XML
@@ -53,24 +53,24 @@ def replaceConfigTokens():
   if ('upload_cloudinary_api_secret' not in config):
     config['upload_cloudinary_api_secret'] = True
     
-  if ('artist_sort_1' not in config.keys() or config['artist_sort_1'] == ""):
+  if ('artist_sort_1' not in list(config.keys()) or config['artist_sort_1'] == ""):
     config['artist_sort_1'] = 'title_sort'
     
-  if ('artist_sort_1_reverse' not in config.keys() or config['artist_sort_1_reverse'] == ""):
+  if ('artist_sort_1_reverse' not in list(config.keys()) or config['artist_sort_1_reverse'] == ""):
     config['artist_sort_1_reverse'] = False
-  if ('artist_sort_2_reverse' not in config.keys() or config['artist_sort_2_reverse'] == ""):
+  if ('artist_sort_2_reverse' not in list(config.keys()) or config['artist_sort_2_reverse'] == ""):
     config['artist_sort_2_reverse'] = False
-  if ('artist_sort_3_reverse' not in config.keys() or config['artist_sort_3_reverse'] == ""):
+  if ('artist_sort_3_reverse' not in list(config.keys()) or config['artist_sort_3_reverse'] == ""):
     config['artist_sort_3_reverse'] = False
     
-  if ('album_sort_1' not in config.keys() or config['album_sort_1'] == ""):
+  if ('album_sort_1' not in list(config.keys()) or config['album_sort_1'] == ""):
     config['album_sort_1'] = 'title_sort'
     
-  if ('album_sort_1_reverse' not in config.keys() or config['album_sort_1_reverse'] == ""):
+  if ('album_sort_1_reverse' not in list(config.keys()) or config['album_sort_1_reverse'] == ""):
     config['album_sort_1_reverse'] = False
-  if ('album_sort_2_reverse' not in config.keys() or config['album_sort_2_reverse'] == ""):
+  if ('album_sort_2_reverse' not in list(config.keys()) or config['album_sort_2_reverse'] == ""):
     config['album_sort_2_reverse'] = False
-  if ('album_sort_3_reverse' not in config.keys() or config['album_sort_3_reverse'] == ""):
+  if ('album_sort_3_reverse' not in list(config.keys()) or config['album_sort_3_reverse'] == ""):
     config['album_sort_3_reverse'] = False
     
   if ('msg_new_artists_header' not in config):
@@ -217,52 +217,52 @@ def replaceConfigTokens():
   if ('date_days_back_to_search' not in config and 'days_back_to_search' in config):
     config['date_days_back_to_search'] = config['days_back_to_search']
     
-  if ('movie_sort_1' not in config.keys() or config['movie_sort_1'] == ""):
+  if ('movie_sort_1' not in list(config.keys()) or config['movie_sort_1'] == ""):
     config['movie_sort_1'] = 'rating'
-  if ('movie_sort_2' not in config.keys() or config['movie_sort_2'] == ""):
+  if ('movie_sort_2' not in list(config.keys()) or config['movie_sort_2'] == ""):
     config['movie_sort_2'] = 'title_sort'
     
-  if ('movie_sort_1_reverse' not in config.keys() or config['movie_sort_1_reverse'] == ""):
+  if ('movie_sort_1_reverse' not in list(config.keys()) or config['movie_sort_1_reverse'] == ""):
     config['movie_sort_1_reverse'] = True
-  if ('movie_sort_2_reverse' not in config.keys() or config['movie_sort_2_reverse'] == ""):
+  if ('movie_sort_2_reverse' not in list(config.keys()) or config['movie_sort_2_reverse'] == ""):
     config['movie_sort_2_reverse'] = False
-  if ('movie_sort_3_reverse' not in config.keys() or config['movie_sort_3_reverse'] == ""):
+  if ('movie_sort_3_reverse' not in list(config.keys()) or config['movie_sort_3_reverse'] == ""):
     config['movie_sort_3_reverse'] = False
     
-  if ('show_sort_1' not in config.keys() or config['show_sort_1'] == ""):
+  if ('show_sort_1' not in list(config.keys()) or config['show_sort_1'] == ""):
     config['show_sort_1'] = 'title_sort'
     
-  if ('show_sort_1_reverse' not in config.keys() or config['show_sort_1_reverse'] == ""):
+  if ('show_sort_1_reverse' not in list(config.keys()) or config['show_sort_1_reverse'] == ""):
     config['show_sort_1_reverse'] = False
-  if ('show_sort_2_reverse' not in config.keys() or config['show_sort_2_reverse'] == ""):
+  if ('show_sort_2_reverse' not in list(config.keys()) or config['show_sort_2_reverse'] == ""):
     config['show_sort_2_reverse'] = False
-  if ('show_sort_3_reverse' not in config.keys() or config['show_sort_3_reverse'] == ""):
+  if ('show_sort_3_reverse' not in list(config.keys()) or config['show_sort_3_reverse'] == ""):
     config['show_sort_3_reverse'] = False
     
-  if ('season_sort_1' not in config.keys() or config['season_sort_1'] == ""):
+  if ('season_sort_1' not in list(config.keys()) or config['season_sort_1'] == ""):
     config['season_sort_1'] = 'title_sort'
-  if ('season_sort_2' not in config.keys() or config['season_sort_2'] == ""):
+  if ('season_sort_2' not in list(config.keys()) or config['season_sort_2'] == ""):
     config['season_sort_2'] = 'index'
     
-  if ('season_sort_1_reverse' not in config.keys() or config['season_sort_1_reverse'] == ""):
+  if ('season_sort_1_reverse' not in list(config.keys()) or config['season_sort_1_reverse'] == ""):
     config['season_sort_1_reverse'] = False
-  if ('season_sort_2_reverse' not in config.keys() or config['season_sort_2_reverse'] == ""):
+  if ('season_sort_2_reverse' not in list(config.keys()) or config['season_sort_2_reverse'] == ""):
     config['season_sort_2_reverse'] = False
-  if ('season_sort_3_reverse' not in config.keys() or config['season_sort_3_reverse'] == ""):
+  if ('season_sort_3_reverse' not in list(config.keys()) or config['season_sort_3_reverse'] == ""):
     config['season_sort_3_reverse'] = False
     
-  if ('episode_sort_1' not in config.keys() or config['episode_sort_1'] == ""):
+  if ('episode_sort_1' not in list(config.keys()) or config['episode_sort_1'] == ""):
     config['episode_sort_1'] = 'show_title_sort'
-  if ('episode_sort_2' not in config.keys() or config['episode_sort_2'] == ""):
+  if ('episode_sort_2' not in list(config.keys()) or config['episode_sort_2'] == ""):
     config['episode_sort_2'] = 'season_index'
-  if ('episode_sort_3' not in config.keys() or config['episode_sort_3'] == ""):
+  if ('episode_sort_3' not in list(config.keys()) or config['episode_sort_3'] == ""):
     config['episode_sort_3'] = 'index'
     
-  if ('episode_sort_1_reverse' not in config.keys() or config['episode_sort_1_reverse'] == ""):
+  if ('episode_sort_1_reverse' not in list(config.keys()) or config['episode_sort_1_reverse'] == ""):
     config['episode_sort_1_reverse'] = False
-  if ('episode_sort_2_reverse' not in config.keys() or config['episode_sort_2_reverse'] == ""):
+  if ('episode_sort_2_reverse' not in list(config.keys()) or config['episode_sort_2_reverse'] == ""):
     config['episode_sort_2_reverse'] = False
-  if ('episode_sort_3_reverse' not in config.keys() or config['episode_sort_3_reverse'] == ""):
+  if ('episode_sort_3_reverse' not in list(config.keys()) or config['episode_sort_3_reverse'] == ""):
     config['episode_sort_3_reverse'] = False
     
   # The below code is replacing tokens
@@ -452,7 +452,7 @@ def processImage(imageHash, thumb, mediaType, seasonIndex, episodeIndex):
       logging.info('processImage: Setting image paths to local and copying image to web folder')
       try:
         shutil.copy(imgLocation, img)
-      except EnvironmentError, e:
+      except EnvironmentError as e:
         logging.warning('processImage: Failed to copy image - ' + repr(e))
         thumbObj['emailImgPath'] = ''
         thumbObj['webImgPath'] = ''
@@ -516,7 +516,7 @@ def addheader(message, headername, headervalue):
 def sendMail(email):
   #First check if email is in the unsubscribe list
   if email != '' and email[0].upper() in (name.upper() for name in config['email_unsubscribe']):
-    print email[0] + ' is in the unsubscribe list.  Do not send an email.'
+    print(email[0] + ' is in the unsubscribe list.  Do not send an email.')
     return 0;
   gmail_user = config['email_username']
   gmail_pwd = config['email_password']
@@ -859,18 +859,18 @@ parser.add_argument('--version', help='Display the version of the script file', 
 args = vars(parser.parse_args())
 
 if ('version' in args and args['version']):
-  print 'Script Version: ' + SCRIPT_VERSION
+  print('Script Version: ' + SCRIPT_VERSION)
   sys.exit()
 
 if ('configfile' in args):
   configFile = args['configfile']
 
 if (not os.path.isfile(configFile)):
-  print configFile + ' does not exist'
+  print(configFile + ' does not exist')
   sys.exit()
   
 config = {}
-execfile(configFile, config)
+exec(compile(open(configFile, "rb").read(), configFile, 'exec'), config)
 replaceConfigTokens()
 
 if (config['logging_enabled']):
@@ -938,10 +938,10 @@ if (config['filter_include_plex_web_link']):
       logging.warning(DLNA_DB_FILE + ' does not exist')
 
 DATABASE_FILE = config['plex_data_folder'] + 'Plex Media Server' + os.path.sep + 'Plug-in Support' + os.path.sep + 'Databases' + os.path.sep + 'com.plexapp.plugins.library.db'
-  
+
 if (not os.path.isfile(DATABASE_FILE)):
   logging.error(DATABASE_FILE + ' does not exist. Please make sure the plex_data_folder value is correct.')
-  print DATABASE_FILE + ' does not exist. Please make sure the plex_data_folder value is correct.'
+  print(DATABASE_FILE + ' does not exist. Please make sure the plex_data_folder value is correct.')
   sys.exit()
   
 shutil.copyfile(DATABASE_FILE, DATABASE_FILE + '_plexemail')
@@ -1083,11 +1083,11 @@ with con:
         songs[response[item]['id']] = response[item]
         
     if ('movie_sort_3' in config and config['movie_sort_3'] != ''):
-      movies = OrderedDict(sorted(movies.iteritems(), key=lambda t: t[1][config['movie_sort_3']], reverse=config['movie_sort_3_reverse']))
+      movies = OrderedDict(sorted(iter(movies.items()), key=lambda t: t[1][config['movie_sort_3']], reverse=config['movie_sort_3_reverse']))
     if ('movie_sort_2' in config and config['movie_sort_2'] != ''):
-      movies = OrderedDict(sorted(movies.iteritems(), key=lambda t: t[1][config['movie_sort_2']], reverse=config['movie_sort_2_reverse']))
+      movies = OrderedDict(sorted(iter(movies.items()), key=lambda t: t[1][config['movie_sort_2']], reverse=config['movie_sort_2_reverse']))
     if ('movie_sort_1' in config and config['movie_sort_1'] != ''):
-      movies = OrderedDict(sorted(movies.iteritems(), key=lambda t: t[1][config['movie_sort_1']], reverse=config['movie_sort_1_reverse']))
+      movies = OrderedDict(sorted(iter(movies.items()), key=lambda t: t[1][config['movie_sort_1']], reverse=config['movie_sort_1_reverse']))
     
     for movie in movies:
       movies[movie] = convertToHumanReadable(movies[movie])
@@ -1119,7 +1119,7 @@ with con:
       htmlText += '<div style="margin-left: 200px;"><h2 class="featurette-heading"><a target="_blank" style="color: #000000;" href="' + pwLink + '">' + title.decode('utf-8') + '</a></h2>'
       
       sections = config['filter_sections_movies']
-      for section in sorted(sections.iteritems(), key=lambda t: t[1]['order']):
+      for section in sorted(iter(sections.items()), key=lambda t: t[1]['order']):
         if (movies[movie][section[0]] in sections[section[0]]['exclude'] or len(set(movies[movie][section[0] + '_filter']).intersection(sections[section[0]]['exclude'])) > 0 or (sections[section[0]]['include'] and movies[movie][section[0]] not in sections[section[0]]['include'] and len(set(movies[movie][section[0] + '_filter']).intersection(sections[section[0]]['include'])) == 0)):
           skipItem = True
         if (sections[section[0]]['show'] and movies[movie][section[0]] and movies[movie][section[0]] != ''):
@@ -1143,11 +1143,11 @@ with con:
         htmlMovies += htmlText
     
     if ('show_sort_3' in config and config['show_sort_3'] != ''):
-      tvShows = OrderedDict(sorted(tvShows.iteritems(), key=lambda t: t[1][config['show_sort_3']], reverse=config['show_sort_3_reverse']))
+      tvShows = OrderedDict(sorted(iter(tvShows.items()), key=lambda t: t[1][config['show_sort_3']], reverse=config['show_sort_3_reverse']))
     if ('show_sort_2' in config and config['show_sort_2'] != ''):
-      tvShows = OrderedDict(sorted(tvShows.iteritems(), key=lambda t: t[1][config['show_sort_2']], reverse=config['show_sort_2_reverse']))
+      tvShows = OrderedDict(sorted(iter(tvShows.items()), key=lambda t: t[1][config['show_sort_2']], reverse=config['show_sort_2_reverse']))
     if ('show_sort_1' in config and config['show_sort_1'] != ''):
-      tvShows = OrderedDict(sorted(tvShows.iteritems(), key=lambda t: t[1][config['show_sort_1']], reverse=config['show_sort_1_reverse']))
+      tvShows = OrderedDict(sorted(iter(tvShows.items()), key=lambda t: t[1][config['show_sort_1']], reverse=config['show_sort_1_reverse']))
     
     for show in tvShows:
       tvShows[show] = convertToHumanReadable(tvShows[show])
@@ -1177,7 +1177,7 @@ with con:
       htmlText += '<div style="margin-left: 200px;"><h2 class="featurette-heading"><a target="_blank" style="color: #000000;" href="' + pwLink + '">' + title.decode('utf-8') + '</a></h2>'
       
       sections = config['filter_sections_TV']
-      for section in sorted(sections.iteritems(), key=lambda t: t[1]['order']):
+      for section in sorted(iter(sections.items()), key=lambda t: t[1]['order']):
         if (tvShows[show][section[0]] in sections[section[0]]['exclude'] or len(set(tvShows[show][section[0] + '_filter']).intersection(sections[section[0]]['exclude'])) > 0 or (sections[section[0]]['include'] and tvShows[show][section[0]] not in sections[section[0]]['include'] and len(set(tvShows[show][section[0] + '_filter']).intersection(sections[section[0]]['include'])) == 0)):
           skipItem = True
         if (sections[section[0]]['show'] and tvShows[show][section[0]] and tvShows[show][section[0]] != ''):
@@ -1225,11 +1225,11 @@ with con:
       del cur2
           
     if ('season_sort_3' in config and config['season_sort_3'] != ''):
-      tvSeasons = OrderedDict(sorted(tvSeasons.iteritems(), key=lambda t: t[1][config['season_sort_3']], reverse=config['season_sort_3_reverse']))
+      tvSeasons = OrderedDict(sorted(iter(tvSeasons.items()), key=lambda t: t[1][config['season_sort_3']], reverse=config['season_sort_3_reverse']))
     if ('season_sort_2' in config and config['season_sort_2'] != ''):
-      tvSeasons = OrderedDict(sorted(tvSeasons.iteritems(), key=lambda t: t[1][config['season_sort_2']], reverse=config['season_sort_2_reverse']))
+      tvSeasons = OrderedDict(sorted(iter(tvSeasons.items()), key=lambda t: t[1][config['season_sort_2']], reverse=config['season_sort_2_reverse']))
     if ('season_sort_1' in config and config['season_sort_1'] != ''):
-      tvSeasons = OrderedDict(sorted(tvSeasons.iteritems(), key=lambda t: t[1][config['season_sort_1']], reverse=config['season_sort_1_reverse']))
+      tvSeasons = OrderedDict(sorted(iter(tvSeasons.items()), key=lambda t: t[1][config['season_sort_1']], reverse=config['season_sort_1_reverse']))
     
     for season in tvSeasons:
       tvSeasons[season] = convertToHumanReadable(tvSeasons[season])
@@ -1266,7 +1266,7 @@ with con:
       htmlText += '<p class="lead"><b>Season ' + str(tvSeasons[season]['index']) + '</b></p>'      
       
       sections = config['filter_sections_TV']
-      for section in sorted(sections.iteritems(), key=lambda t: t[1]['order']):
+      for section in sorted(iter(sections.items()), key=lambda t: t[1]['order']):
         if (tvSeasons[season][section[0]] in sections[section[0]]['exclude'] or len(set(tvSeasons[season][section[0] + '_filter']).intersection(sections[section[0]]['exclude'])) > 0 or (sections[section[0]]['include'] and tvSeasons[season][section[0]] not in sections[section[0]]['include'] and len(set(tvSeasons[season][section[0] + '_filter']).intersection(sections[section[0]]['include'])) == 0)):
           skipItem = True
         if (sections[section[0]]['show'] and tvSeasons[season][section[0]] and tvSeasons[season][section[0]] != ''):
@@ -1335,11 +1335,11 @@ with con:
     tvEpisodes = dict(modifiedTVEpisodes)
           
     if ('episode_sort_3' in config and config['episode_sort_3'] != ''):
-      tvEpisodes = OrderedDict(sorted(tvEpisodes.iteritems(), key=lambda t: t[1][config['episode_sort_3']], reverse=config['episode_sort_3_reverse']))
+      tvEpisodes = OrderedDict(sorted(iter(tvEpisodes.items()), key=lambda t: t[1][config['episode_sort_3']], reverse=config['episode_sort_3_reverse']))
     if ('episode_sort_2' in config and config['episode_sort_2'] != ''):
-      tvEpisodes = OrderedDict(sorted(tvEpisodes.iteritems(), key=lambda t: t[1][config['episode_sort_2']], reverse=config['episode_sort_2_reverse']))
+      tvEpisodes = OrderedDict(sorted(iter(tvEpisodes.items()), key=lambda t: t[1][config['episode_sort_2']], reverse=config['episode_sort_2_reverse']))
     if ('episode_sort_1' in config and config['episode_sort_1'] != ''):
-      tvEpisodes = OrderedDict(sorted(tvEpisodes.iteritems(), key=lambda t: t[1][config['episode_sort_1']], reverse=config['episode_sort_1_reverse']))
+      tvEpisodes = OrderedDict(sorted(iter(tvEpisodes.items()), key=lambda t: t[1][config['episode_sort_1']], reverse=config['episode_sort_1_reverse']))
     
     for episode in tvEpisodes:
       if (tvEpisodes[episode]['parent_id'] not in tvSeasons):
@@ -1388,7 +1388,7 @@ with con:
         htmlText += '<p class="lead"><i>S' + str(tvEpisodes[episode]['season_index']) + ' E' + str(tvEpisodes[episode]['index']) + ': ' + title.decode('utf-8') + '</i></p>'
         
         sections = config['filter_sections_TV']
-        for section in sorted(sections.iteritems(), key=lambda t: t[1]['order']):
+        for section in sorted(iter(sections.items()), key=lambda t: t[1]['order']):
           if (tvEpisodes[episode][section[0]] in sections[section[0]]['exclude'] or len(set(tvEpisodes[episode][section[0] + '_filter']).intersection(sections[section[0]]['exclude'])) > 0 or (sections[section[0]]['include'] and tvEpisodes[episode][section[0]] not in sections[section[0]]['include'] and len(set(tvEpisodes[episode][section[0] + '_filter']).intersection(sections[section[0]]['include'])) == 0)):
             skipItem = True
           if (sections[section[0]]['show'] and tvEpisodes[episode][section[0]] and tvEpisodes[episode][section[0]] != ''):
@@ -1412,11 +1412,11 @@ with con:
           htmlTVEpisodes += htmlText
 
     if ('artist_sort_3' in config and config['artist_sort_3'] != ''):
-      artists = OrderedDict(sorted(artists.iteritems(), key=lambda t: t[1][config['artist_sort_3']], reverse=config['artist_sort_3_reverse']))
+      artists = OrderedDict(sorted(iter(artists.items()), key=lambda t: t[1][config['artist_sort_3']], reverse=config['artist_sort_3_reverse']))
     if ('artist_sort_2' in config and config['artist_sort_2'] != ''):
-      artists = OrderedDict(sorted(artists.iteritems(), key=lambda t: t[1][config['artist_sort_2']], reverse=config['artist_sort_2_reverse']))
+      artists = OrderedDict(sorted(iter(artists.items()), key=lambda t: t[1][config['artist_sort_2']], reverse=config['artist_sort_2_reverse']))
     if ('artist_sort_1' in config and config['artist_sort_1'] != ''):
-      artists = OrderedDict(sorted(artists.iteritems(), key=lambda t: t[1][config['artist_sort_1']], reverse=config['artist_sort_1_reverse']))
+      artists = OrderedDict(sorted(iter(artists.items()), key=lambda t: t[1][config['artist_sort_1']], reverse=config['artist_sort_1_reverse']))
     
     for artist in artists:
       artists[artist] = convertToHumanReadable(artists[artist])
@@ -1446,7 +1446,7 @@ with con:
       htmlText += '<div style="margin-left: 200px;"><h2 class="featurette-heading"><a target="_blank" style="color: #000000;" href="' + pwLink + '">' + title.decode('utf-8') + '</a></h2>'
       
       sections = config['filter_sections_Music']
-      for section in sorted(sections.iteritems(), key=lambda t: t[1]['order']):
+      for section in sorted(iter(sections.items()), key=lambda t: t[1]['order']):
         if (section[0] != 'track_list'):
           if (artists[artist][section[0]] in sections[section[0]]['exclude'] or len(set(artists[artist][section[0] + '_filter']).intersection(sections[section[0]]['exclude'])) > 0 or (sections[section[0]]['include'] and artists[artist][section[0]] not in sections[section[0]]['include'] and len(set(artists[artist][section[0] + '_filter']).intersection(sections[section[0]]['include'])) == 0)):
             skipItem = True
@@ -1516,11 +1516,11 @@ with con:
       cur2.close()
       del cur2
     if ('album_sort_3' in config and config['album_sort_3'] != ''):
-      albums = OrderedDict(sorted(albums.iteritems(), key=lambda t: t[1][config['album_sort_3']], reverse=config['album_sort_3_reverse']))
+      albums = OrderedDict(sorted(iter(albums.items()), key=lambda t: t[1][config['album_sort_3']], reverse=config['album_sort_3_reverse']))
     if ('album_sort_2' in config and config['album_sort_2'] != ''):
-      albums = OrderedDict(sorted(albums.iteritems(), key=lambda t: t[1][config['album_sort_2']], reverse=config['album_sort_2_reverse']))
+      albums = OrderedDict(sorted(iter(albums.items()), key=lambda t: t[1][config['album_sort_2']], reverse=config['album_sort_2_reverse']))
     if ('album_sort_1' in config and config['album_sort_1'] != ''):
-      albums = OrderedDict(sorted(albums.iteritems(), key=lambda t: t[1][config['album_sort_1']], reverse=config['album_sort_1_reverse']))
+      albums = OrderedDict(sorted(iter(albums.items()), key=lambda t: t[1][config['album_sort_1']], reverse=config['album_sort_1_reverse']))
     
     for album in albums:
       albums[album] = convertToHumanReadable(albums[album])
@@ -1556,7 +1556,7 @@ with con:
       tracklistHTMLText = ''
       sections = config['filter_sections_Music']
       trackCount = 0
-      for section in sorted(sections.iteritems(), key=lambda t: t[1]['order']):
+      for section in sorted(iter(sections.items()), key=lambda t: t[1]['order']):
         if (section[0] == 'track_list'):
           if (sections[section[0]]['show']):
             tracklistEmailText += '<br/><table width="100%" style="width: 100% !important"><tr><th align="left" style="text-align: left;">' + sections[section[0]]['headerText']['trackNumber'] + '</th><th align="left" style="text-align: left;">' + sections[section[0]]['headerText']['songName'] + '</th><th align="left" style="text-align: left;">' + sections[section[0]]['headerText']['artistName'] + '</th><th align="right" style="text-align: right;">' + sections[section[0]]['headerText']['duration'] + '</th></tr><tr><td colspan="5"><hr></td></tr>'
@@ -1706,11 +1706,11 @@ with con:
     if (config['web_enabled'] and not config['web_only_save_images'] and (not config['web_skip_if_no_additions'] or hasNewContent)):
       with open(config['web_folder'] + config['web_path'] + os.path.sep + 'index.html', 'w') as text_file:
         text_file.write(webHTML.encode('utf-8'))
-        print 'Web page created successfully'
+        print('Web page created successfully')
     elif (not config['web_enabled'] or (config['web_only_save_images'] and config['web_enabled'])):
-      print 'Web page was not created because the option is disabled in the config file.'
+      print('Web page was not created because the option is disabled in the config file.')
     else:
-      print 'Web page was not created because there were no new additions in the timeframe specified.'
+      print('Web page was not created because there were no new additions in the timeframe specified.')
       
     if (config['email_enabled'] and (not config['email_skip_if_no_additions'] or hasNewContent)):
       # try:
@@ -1733,13 +1733,13 @@ with con:
       else:
         success = sendMail('')
         emailCount += success
-      print 'Successfully sent %s email(s)' % emailCount
+      print('Successfully sent %s email(s)' % emailCount)
       # except:
         # print "Failed to send email(s)"
     elif (not config['email_enabled']):
-      print 'Emails were not sent because the option is disabled in the config file.'
+      print('Emails were not sent because the option is disabled in the config file.')
     else:
-      print 'Emails were not sent because there were no new additions in the timeframe specified.'
+      print('Emails were not sent because there were no new additions in the timeframe specified.')
 
 con.close()
 os.remove(DATABASE_FILE + '_plexemail')
